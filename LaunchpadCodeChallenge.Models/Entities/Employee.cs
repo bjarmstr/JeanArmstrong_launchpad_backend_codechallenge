@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.Models.Entities
 {
-    public class Employees
+    public class Employee
     {
         [Key]
         public Guid Id { get; set; }
@@ -19,6 +19,12 @@ namespace LaunchpadCodeChallenge.Models.Entities
         public string JobTitle { get; set; }
 
         public string Address { get; set; }
+
+        public string DepartmentId { get; set; }
+        
+        public Department Department { get; set; }
+
+
 
     }
 }

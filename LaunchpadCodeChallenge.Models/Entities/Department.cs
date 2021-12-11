@@ -19,5 +19,7 @@ namespace LaunchpadCodeChallenge.Models.Entities
         /// </summary>
         [Key]
         public string Address { get; set; }
+
+        public List<Employee> Employees { get; set; }
     }
 }
