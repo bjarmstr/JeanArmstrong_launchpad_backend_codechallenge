@@ -38,7 +38,7 @@ namespace LaunchpadCodeChallenge.Models.Entities
         /// <summary>
         /// Department that employee is assigned to
         /// </summary>
-        public string DepartmentId { get; set; }
+        public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Department is navigation property, which allows access to Department details
