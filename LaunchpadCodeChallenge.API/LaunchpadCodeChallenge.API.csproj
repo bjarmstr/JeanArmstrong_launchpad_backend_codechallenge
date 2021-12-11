@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LaunchpadCodeChallenge.Repository\LaunchpadCodeChallenge.Repository.csproj" />
+    <ProjectReference Include="..\LaunchpadCodeChallenge.Service\LaunchpadCodeChallenge.Service.csproj" />
+  </ItemGroup>
+
 </Project>
