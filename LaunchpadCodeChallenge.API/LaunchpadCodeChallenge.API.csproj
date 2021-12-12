@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>7f996974-cc3f-4874-a6bf-270d233c0fae</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
   </ItemGroup>
 
   <ItemGroup>

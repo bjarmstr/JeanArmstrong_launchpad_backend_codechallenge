@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchpadCodeChallenge.API", "LaunchpadCodeChallenge.API\LaunchpadCodeChallenge.API.csproj", "{85FBEE21-7B95-4930-BE7B-D442A4C3FA6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchpadCodeChallenge.Models", "LaunchpadCodeChallenge.Models\LaunchpadCodeChallenge.Models.csproj", "{3463526B-43B8-4B2C-94D6-A94F39D0B0E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchpadCodeChallenge.Models", "LaunchpadCodeChallenge.Models\LaunchpadCodeChallenge.Models.csproj", "{3463526B-43B8-4B2C-94D6-A94F39D0B0E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchpadCodeChallenge.Repository", "LaunchpadCodeChallenge.Repository\LaunchpadCodeChallenge.Repository.csproj", "{6E785C58-AAF8-4AC7-95F2-8B4F65F23AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchpadCodeChallenge.Repository", "LaunchpadCodeChallenge.Repository\LaunchpadCodeChallenge.Repository.csproj", "{6E785C58-AAF8-4AC7-95F2-8B4F65F23AB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchpadCodeChallenge.Service", "LaunchpadCodeChallenge.Service\LaunchpadCodeChallenge.Service.csproj", "{9A4AB017-6770-4AD4-9850-D1D7A672CDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchpadCodeChallenge.Service", "LaunchpadCodeChallenge.Service\LaunchpadCodeChallenge.Service.csproj", "{9A4AB017-6770-4AD4-9850-D1D7A672CDE3}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{85251026-D640-4BF9-9657-576C13DE1942}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9A4AB017-6770-4AD4-9850-D1D7A672CDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A4AB017-6770-4AD4-9850-D1D7A672CDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A4AB017-6770-4AD4-9850-D1D7A672CDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85251026-D640-4BF9-9657-576C13DE1942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85251026-D640-4BF9-9657-576C13DE1942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85251026-D640-4BF9-9657-576C13DE1942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85251026-D640-4BF9-9657-576C13DE1942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
