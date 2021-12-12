@@ -49,7 +49,6 @@ namespace LaunchpadCodeChallenge.API.Controllers
             return Ok(results);
         }
 
-
         /// <summary>
         /// Test endpoint to for IEnumerable GetAll Service
         /// Doesn't have async and exposes Employee not recommended for production
@@ -59,18 +58,19 @@ namespace LaunchpadCodeChallenge.API.Controllers
         public ActionResult<List<Employee>> GetAll()
         {
             var results = _employeeService.GetAllPublic();
-
             return Ok(results);
         }
 
+        /// <summary>
+        /// Get employees in a given department
+        /// </summary>
+        /// <param name="departmentId"></param>
+        /// <returns></returns>
         [HttpGet("department/{departmentId}")]
-
         public async Task<ActionResult<List<EmployeeVM>>> GetByDepartment([FromRoute]Guid departmentId)
         {
             var results = await _employeeService.GetByDepartment(departmentId);
-
             return Ok(results);
-
         }
 
     }
