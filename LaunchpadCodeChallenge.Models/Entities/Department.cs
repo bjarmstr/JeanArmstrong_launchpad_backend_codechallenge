@@ -23,7 +23,7 @@ namespace LaunchpadCodeChallenge.Models.Entities
         /// <summary>
         /// Each Department has a Unique Address
         /// </summary>
-        [Key]
+  
         [Required]
         public string Address { get; set; }
 

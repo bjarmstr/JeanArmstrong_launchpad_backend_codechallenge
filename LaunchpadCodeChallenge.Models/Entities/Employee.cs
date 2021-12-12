@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaunchpadCodeChallenge.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,27 @@ namespace LaunchpadCodeChallenge.Models.Entities
 {
     public class Employee
     {
+
+        public Employee()
+        {
+
+        }
+
+        public Employee(EmployeeCreateVM src)
+        {
+
+            Id = src.Id;
+            FirstName = src.FirstName;
+            LastName = src.LastName;
+            JobTitle = src.JobTitle;
+            Address = src.Address;
+
+
+
+
+        }
+
+
         /// <summary>
         /// Unique identifier - Guid 
         /// </summary>

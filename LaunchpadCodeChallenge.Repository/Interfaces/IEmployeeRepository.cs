@@ -9,6 +9,10 @@ namespace LaunchpadCodeChallenge.Repository.Interfaces
 {
     public interface IEmployeeRepository
     {
-        Task<List<Employee>> GetAll();
+        IEnumerable<Employee> GetAll();
+
+        List<Employee> GetAllList();
+
+        Task<Employee> Create(Employee src);
     }
 }

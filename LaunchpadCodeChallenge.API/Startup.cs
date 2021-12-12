@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 
@@ -41,10 +42,14 @@ namespace LaunchpadCodeChallenge.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            //services.AddControllers();
+            services.AddControllers().AddJsonOptions(x =>
+                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            
             ConfigureDependencyInjection(services);
+            
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite("LaunchpadCodChallengeDatabase"));
+                options.UseSqlite("LaunchpadSqliteDb"));
 
         }
 

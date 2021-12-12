@@ -1,5 +1,4 @@
-﻿using LaunchpadCodeChallenge.Models.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,26 +6,8 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.Models.ViewModels
 {
-    public class EmployeeVM
+    public class EmployeeCreateVM
     {
-
-        public EmployeeVM()
-        {
-
-        }
-
-        public EmployeeVM(Employee src)
-        {
-            Id = src.Id;
-            FirstName = src.FirstName;
-            LastName = src.LastName;
-            JobTitle = src.JobTitle;
-            Address = src.Address;
-            DepartmentName = src.Department.Name;
-        }
-
-
-
         /// <summary>
         /// Unique Identifier
         /// </summary>
@@ -55,7 +36,7 @@ namespace LaunchpadCodeChallenge.Models.ViewModels
         /// <summary>
         /// Name of Department that employee is assigned to
         /// </summary>
-        public string DepartmentName { get; set; }
+        
 
        
 

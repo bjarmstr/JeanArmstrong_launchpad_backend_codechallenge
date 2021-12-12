@@ -18,12 +18,32 @@ namespace LaunchpadCodeChallenge.Repository
             _context = context;
         }
 
-        public async Task<List<Employee>> GetAll()
+        public IEnumerable<Employee> GetAll()
         {
-            var results = await _context.Employees
-                .ToListAsync();
+            var results =  _context.Employees
+                .Include(emp => emp.Department)
+                .AsEnumerable(); ;
             return results;
 
+        }
+
+        public List<Employee> GetAllList()
+        {
+            var results = _context.Employees
+                .Include(emp => emp.Department)
+                .ToList();
+
+            return results;
+
+        }
+
+        public async Task<Employee> Create(Employee src)
+        {
+            
+                _context.Add(src);
+                await _context.SaveChangesAsync();
+                return src;
+            
         }
 
 

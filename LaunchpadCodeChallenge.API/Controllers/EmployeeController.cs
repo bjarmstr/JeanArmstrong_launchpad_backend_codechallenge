@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.API.Controllers
@@ -21,10 +23,28 @@ namespace LaunchpadCodeChallenge.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<EmployeeVM>>ListAll()
+        public ActionResult<List<EmployeeVM>> ListAll()
         {
-            var results =  _employeeService.ListAll();
+            var results = _employeeService.ListAll();
             return Ok(results);
+        }
+
+        [HttpGet("getall")]
+        public ActionResult<List<EmployeeVM>> GetAll()
+        {
+            var results = _employeeService.GetAll();
+
+            return Ok(results);
+        }
+
+        [HttpPost("listing")]
+        public async Task<ActionResult<EmployeeVM>> Create([FromBody] EmployeeCreateVM data)
+        {
+
+
+
+            var result = await _employeeService.Create(data);
+            return Ok(result);
         }
 
     }

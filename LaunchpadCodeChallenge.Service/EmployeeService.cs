@@ -1,4 +1,5 @@
 ﻿using LaunchpadCodeChallenge.Models.Entities;
+using LaunchpadCodeChallenge.Models.ViewModels;
 using LaunchpadCodeChallenge.Repository.Interfaces;
 using LaunchpadCodeChallenge.Service.Interfaces;
 using System;
@@ -21,15 +22,26 @@ namespace LaunchpadCodeChallenge.Service
         public IEnumerable<Employee> GetAll()
         {
             var results = _employeeRepository.GetAll();
-            return (IEnumerable<Employee>)results;
+            
+            return results;
         }
 
-        public IList<Employee> ListAll()
+        
+        public List<EmployeeVM> ListAll()
         {
-            ///** this is returning GetAll()
-            var results = _employeeRepository.GetAll();
+            ///** this is returning a list
+            var results = _employeeRepository.GetAllList();
             //results is a list
-            return (IList<Employee>)results;
+
+            var models = results.Select(employee => new EmployeeVM(employee)).ToList();
+            return models;
+        }
+
+        public async Task<Employee> Create(EmployeeCreateVM src)
+        {
+            var newEntity = new Employee(src);
+            var result = await _employeeRepository.Create(newEntity);
+            return (result);
         }
 
     }
