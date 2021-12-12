@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace LaunchpadCodeChallenge.Models.Entities
 {
 
-   // [Index(nameof(Department.Address), IsUnique = true)]
+    [Index(nameof(Address), IsUnique = true)]
     public class Department
     {
         /// <summary>
@@ -25,9 +26,7 @@ namespace LaunchpadCodeChallenge.Models.Entities
 
         /// <summary>
         /// Each Department has a Unique Address
-        /// </summary>
-  
-        [Required]
+        /// </summary>        
         public string Address { get; set; }
 
         /// <summary>
