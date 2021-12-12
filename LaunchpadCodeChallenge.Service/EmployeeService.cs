@@ -30,7 +30,7 @@ namespace LaunchpadCodeChallenge.Service
         public List<EmployeeVM> ListAll()
         {
             ///** this is returning a list
-            var results = _employeeRepository.GetAllList();
+            var results = _employeeRepository.ListAll();
             //results is a list
 
             var models = results.Select(employee => new EmployeeVM(employee)).ToList();

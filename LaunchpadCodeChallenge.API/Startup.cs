@@ -42,12 +42,14 @@ namespace LaunchpadCodeChallenge.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllers();
-            services.AddControllers().AddJsonOptions(x =>
-                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
-            
+            services.AddControllers();
+
+            //Add the following to stop circular reference if department name needs to be included in IEnumerable call
+           // services.AddControllers().AddJsonOptions(x =>
+                //  x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
             ConfigureDependencyInjection(services);
-            
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite("LaunchpadSqliteDb"));
 
@@ -56,6 +58,8 @@ namespace LaunchpadCodeChallenge.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

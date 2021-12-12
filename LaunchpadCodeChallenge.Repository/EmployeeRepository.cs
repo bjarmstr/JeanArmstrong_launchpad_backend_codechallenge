@@ -20,20 +20,29 @@ namespace LaunchpadCodeChallenge.Repository
 
         public IEnumerable<Employee> GetAll()
         {
-            var results =  _context.Employees
-                .Include(emp => emp.Department)
-                .AsEnumerable(); ;
+            var results = _context.Employees
+                .AsEnumerable(); 
             return results;
 
         }
 
-        public List<Employee> GetAllList()
+
+
+        public IList<Employee> ListAll()
         {
             var results = _context.Employees
                 .Include(emp => emp.Department)
                 .ToList();
 
-            return results;
+            IList<Employee> employeesToIList = new List<Employee>();
+            
+            foreach (Employee emp in results)
+            {
+                employeesToIList.Add(emp);
+
+            }
+            
+            return employeesToIList;
 
         }
 

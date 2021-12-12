@@ -11,7 +11,7 @@ namespace LaunchpadCodeChallenge.Repository.Interfaces
     {
         IEnumerable<Employee> GetAll();
 
-        List<Employee> GetAllList();
+        IList<Employee> ListAll();
 
         Task<Employee> Create(Employee src);
     }
