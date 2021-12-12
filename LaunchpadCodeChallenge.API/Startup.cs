@@ -1,4 +1,7 @@
 using LaunchpadCodeChallenge.Repository;
+using LaunchpadCodeChallenge.Repository.Interfaces;
+using LaunchpadCodeChallenge.Service;
+using LaunchpadCodeChallenge.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,10 +29,20 @@ namespace LaunchpadCodeChallenge.API
 
         public IConfiguration Configuration { get; }
 
+
+        public void ConfigureDependencyInjection(IServiceCollection services)
+        {
+            // Configure Dependency Injection
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            ConfigureDependencyInjection(services);
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite("LaunchpadCodChallengeDatabase"));
 
