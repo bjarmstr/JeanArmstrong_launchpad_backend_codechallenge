@@ -15,22 +15,7 @@ namespace LaunchpadCodeChallenge.Models.Entities
         {
 
         }
-
-        public Employee(EmployeeCreateVM src)
-        {
-
-            Id = src.Id;
-            FirstName = src.FirstName;
-            LastName = src.LastName;
-            JobTitle = src.JobTitle;
-            Address = src.Address;
-
-
-
-
-        }
-
-
+      
         /// <summary>
         /// Unique identifier - Guid 
         /// </summary>

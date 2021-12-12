@@ -33,8 +33,10 @@ namespace LaunchpadCodeChallenge.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
+            //not presently working
+            //modelBuilder.Entity<Department>()
+            //             .HasIndex(e => e.Address)
+            //             .IsUnique();
 
             modelBuilder.Entity<Department>().HasData(
                 new Department
@@ -49,6 +51,13 @@ namespace LaunchpadCodeChallenge.Repository
                     Name = "Administration",
                     Address = "7th floor",
                 }
+
+                 //new Department
+                 //{
+                 //    Id = new Guid("32765d3e-4333-41a3-8177-4409cb508b7a"),
+                 //    Name = "Administration",
+                 //    Address = "7th floor",
+                 //}
 
 
             );

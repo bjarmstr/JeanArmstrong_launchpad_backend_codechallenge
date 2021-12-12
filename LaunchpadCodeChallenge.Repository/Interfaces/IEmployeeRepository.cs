@@ -13,6 +13,8 @@ namespace LaunchpadCodeChallenge.Repository.Interfaces
 
         IList<Employee> ListAll();
 
-        Task<Employee> Create(Employee src);
+        Task<List<Employee>> ListAllAsync();
+
+        Task<List<Employee>> GetByDepartment(Guid departmentId);
     }
 }

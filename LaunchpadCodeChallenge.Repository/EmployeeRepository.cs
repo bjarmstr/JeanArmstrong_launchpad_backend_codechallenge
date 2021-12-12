@@ -17,9 +17,13 @@ namespace LaunchpadCodeChallenge.Repository
         {
             _context = context;
         }
-
+        
+        //For Question 6
         public IEnumerable<Employee> GetAll()
         {
+            //.AsEnumerable can create cyclical loading issues
+            // if acesss to Department details is required 
+            //use JsonSerializerOptions (commented out in Startup.cs)
             var results = _context.Employees
                 .AsEnumerable(); 
             return results;
@@ -27,32 +31,45 @@ namespace LaunchpadCodeChallenge.Repository
         }
 
 
-
+        //for Question 6
         public IList<Employee> ListAll()
         {
-            var results = _context.Employees
-                .Include(emp => emp.Department)
+            var results =  _context.Employees
                 .ToList();
 
+            //A IList can not be cast from a List, so a new List is created and then each employee is added to the IList
             IList<Employee> employeesToIList = new List<Employee>();
             
             foreach (Employee emp in results)
             {
                 employeesToIList.Add(emp);
-
             }
             
             return employeesToIList;
 
         }
 
-        public async Task<Employee> Create(Employee src)
+        //For Restful API Question 4a
+        public async Task<List<Employee>> ListAllAsync()
         {
-            
-                _context.Add(src);
-                await _context.SaveChangesAsync();
-                return src;
-            
+            var results = await _context.Employees
+               .Include(emp => emp.Department)
+               .ToListAsync();
+
+            return results;
+
+        }
+
+        //for Question 4b
+        public async Task<List<Employee>> GetByDepartment(Guid departmentId)
+        {
+            var results = await _context.Employees
+                .Where(emp => emp.DepartmentId == departmentId)
+               .Include(emp => emp.Department)
+               .ToListAsync();
+
+            return results;
+
         }
 
 

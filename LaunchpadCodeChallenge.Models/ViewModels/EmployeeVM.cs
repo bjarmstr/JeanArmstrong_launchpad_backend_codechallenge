@@ -22,6 +22,7 @@ namespace LaunchpadCodeChallenge.Models.ViewModels
             LastName = src.LastName;
             JobTitle = src.JobTitle;
             Address = src.Address;
+            DepartmentId = src.DepartmentId;
             DepartmentName = src.Department.Name;
         }
 
@@ -51,6 +52,11 @@ namespace LaunchpadCodeChallenge.Models.ViewModels
         /// Mailing Address
         /// </summary>
         public string Address { get; set; }
+
+        /// <summary>
+        /// Unique identifier for Department
+        /// </summary>
+        public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Name of Department that employee is assigned to

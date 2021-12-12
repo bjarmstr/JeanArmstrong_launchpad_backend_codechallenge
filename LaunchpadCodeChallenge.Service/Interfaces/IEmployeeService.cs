@@ -10,10 +10,13 @@ namespace LaunchpadCodeChallenge.Service.Interfaces
 {
     public interface IEmployeeService
     {
-        public IEnumerable<Employee> GetAll();
+        IEnumerable<Employee> GetAllPublic();
+        //IEnumerable<Employee> GetAll();
 
-        public List<EmployeeVM> ListAll();
+        IList<Employee> ListAll();
 
-        public Task<Employee> Create(EmployeeCreateVM src);
+        Task<List<EmployeeVM>> ListAllAysnc();
+
+        Task<List<EmployeeVM>> GetByDepartment(Guid departmentId);
     }
 }

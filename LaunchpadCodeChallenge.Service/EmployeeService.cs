@@ -19,29 +19,55 @@ namespace LaunchpadCodeChallenge.Service
             _employeeRepository = employeeRepository;
         }
 
-        public IEnumerable<Employee> GetAll()
+            
+        //for Question 3 and 6
+        //I should have clarified --  Can I put public out the front?  Can I make it async?
+        IEnumerable<Employee> GetAll()
         {
             var results = _employeeRepository.GetAll();
             
             return results;
         }
+        //public method to access private method
+        public IEnumerable<Employee> GetAllPublic()
+        {
+           return GetAll();
+        }
 
-        
-        public List<EmployeeVM> ListAll()
+        //for Question 3 and 6
+        //clarification -make a private and public method  if public is not allowed
+        public IList<Employee> ListAll()
         {
             ///** this is returning a list
-            var results = _employeeRepository.ListAll();
+            var results =  _employeeRepository.ListAll();
             //results is a list
 
+            return results;
+        }
+
+
+        //for Question 4a
+        public async Task<List<EmployeeVM>> ListAllAysnc()
+        {
+            var results = await _employeeRepository.ListAllAsync();
+            //results is a list
+
+            //Return a ViewModel so Entity is not exposed to endpoint
+            //mapping of Employee to EmployeeVM is in EmployeeVM constructor
             var models = results.Select(employee => new EmployeeVM(employee)).ToList();
             return models;
         }
 
-        public async Task<Employee> Create(EmployeeCreateVM src)
+
+        //for Question 4b
+        public async Task<List<EmployeeVM>> GetByDepartment(Guid departmentId)
         {
-            var newEntity = new Employee(src);
-            var result = await _employeeRepository.Create(newEntity);
-            return (result);
+            var results = await _employeeRepository.GetByDepartment(departmentId);
+
+            //mapping of Employee to EmployeeVM is in EmployeeVM constructor
+            var models = results.Select(employee => new EmployeeVM(employee)).ToList();
+           
+            return models;
         }
 
     }
