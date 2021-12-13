@@ -22,35 +22,41 @@ namespace LaunchpadCodeChallenge.ConsoleApp
             Console.WriteLine("Question8");
 
             //case a.  integer 1,2,3,4
-            int myvar = 3;
-            TestModule(ref myvar);
+            int intVar = 3;
+            Console.WriteLine($"{TestModule(ref intVar)}, {intVar}*2");
 
             //case b.  integer >4
-            myvar = 6;
-            TestModule(ref myvar);
+            intVar = 6;
+            TestModule(ref intVar);
+            Console.WriteLine($"{TestModule(ref intVar)}, {intVar}*3");
 
             //case c. integer < 1
-            myvar = -4;
-            //TestModule(ref myvar);
+            intVar = -4;
+            //TestModule(ref intVar);
 
             //case d.  float 1f and 2f
-            float myfloat = 1.0f;
-            TestModule(ref myfloat);
+            float floatVar = 1.0f;
+            var floatResult = TestModule(ref floatVar);
+            Console.WriteLine($"{floatResult}");
+            var valueType = floatResult.GetType();
+            Console.WriteLine($"{floatResult} of type {valueType}");
+
 
             //case e.  string
-            string mysstring = "e. to upper";
-            TestModule(ref mysstring);
+            string stringVar = "e. to upper";
+            Console.WriteLine($"{TestModule(ref stringVar)}");
 
             //case f.  default
-            DateTime thisDate1 = new DateTime(2011, 6, 10);
-            TestModule(ref thisDate1);
-            bool b = true;
-            TestModule(ref b);
+            DateTime dateVar = new DateTime(2011, 6, 10);
+            Console.WriteLine($"{TestModule(ref dateVar)}");
+
+            bool boolVar = true;
+            Console.WriteLine($"{TestModule(ref boolVar)}");
 
 
         }
 
-        static void TestModule<T>(ref T value)
+        static T TestModule<T>(ref T value)
         {
             //var valueType = value.GetType();
             //Console.WriteLine($"{value} of type {valueType}");
@@ -68,25 +74,21 @@ namespace LaunchpadCodeChallenge.ConsoleApp
 
                     if (i <= 4) quotient = i * 2;
                     else quotient = i * 3;
-                     //return quotient
-                     Console.WriteLine($"multiplied {quotient}");
-                    break;
+
+                    return (T)Convert.ChangeType(quotient, typeof(T));        
 
 
                 case 1.0f:
                 case 2.0f:
-                    Console.WriteLine($"return 3.0f");
-                    break;
+                    return (T)Convert.ChangeType(3.0f, typeof(T));
 
 
                 case string str:
-                    Console.WriteLine($"{str.ToUpper()}");
-                    break;
+                    return (T)Convert.ChangeType(str.ToUpper(), typeof(T));
 
-                      
+
                 default:
-                    Console.WriteLine($"default");
-                    break;
+                    return (T)Convert.ChangeType(value, typeof(T));
             }
 
             Console.WriteLine();
