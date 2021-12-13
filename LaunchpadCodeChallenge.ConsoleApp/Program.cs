@@ -8,8 +8,7 @@ namespace LaunchpadCodeChallenge.ConsoleApp
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("test");
+            //question 7
             List<string>.Enumerator iterateNames = QuestionClass.CreateNamesListEnumerator();
             while (iterateNames.MoveNext())
             {
