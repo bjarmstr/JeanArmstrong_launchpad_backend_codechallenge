@@ -17,6 +17,7 @@ namespace LaunchpadCodeChallenge.ConsoleApp
                 Console.WriteLine(str);
             }
 
+            Console.WriteLine();
             //question 8
             Console.WriteLine("Question8");
 
@@ -30,7 +31,7 @@ namespace LaunchpadCodeChallenge.ConsoleApp
 
             //case c. integer < 1
             myvar = -4;
-            TestModule(ref myvar);
+            //TestModule(ref myvar);
 
             //case d.  float 1f and 2f
             float myfloat = 1.0f;
@@ -41,10 +42,7 @@ namespace LaunchpadCodeChallenge.ConsoleApp
             TestModule(ref mysstring);
 
             //case f.  default
-            //Test fails this case
             DateTime thisDate1 = new DateTime(2011, 6, 10);
-            var valueTypeDT = thisDate1.GetType();
-            Console.WriteLine($"{thisDate1} of type {valueTypeDT}");
             TestModule(ref thisDate1);
             bool b = true;
             TestModule(ref b);
@@ -54,44 +52,38 @@ namespace LaunchpadCodeChallenge.ConsoleApp
 
         static void TestModule<T>(ref T value)
         {
-            var valueType = value.GetType();
-            Console.WriteLine($"{value} of type {valueType}");
+            //var valueType = value.GetType();
+            //Console.WriteLine($"{value} of type {valueType}");
             
 
             switch (value)
             {
-                case int i  :
-                    if (i >= 1 && i <= 4)
-                    {
-                        var quotient = i * 2;
-                        //return i
-                        Console.WriteLine($"multiplied by 2 {quotient}");
-                        break;
-                    }
-                    if (i > 4)
-                    {
-                        var quotient = i * 3;
-                        
-                        //return i
-                        Console.WriteLine($"multiplied by 3 {quotient}");
-                    }
-                    if (i < 1)
-                    {
+                case < 1:
+                    throw new ArgumentException(
+                            "Incorrect input, integer must be >= 1","value");
+                  
+                case int i:
 
-                        throw new ArgumentException(
-                            String.Format("{0} is an incorrect input, integer must be >= 1");
-                    }
-                    
+                    var quotient = 0;
+
+                    if (i <= 4) quotient = i * 2;
+                    else quotient = i * 3;
+                     //return quotient
+                     Console.WriteLine($"multiplied {quotient}");
                     break;
 
-                case float t:
-                    Console.WriteLine($"{t} of type {valueType}");
+
+                case 1.0f:
+                case 2.0f:
+                    Console.WriteLine($"return 3.0f");
                     break;
+
 
                 case string str:
                     Console.WriteLine($"{str.ToUpper()}");
                     break;
 
+                      
                 default:
                     Console.WriteLine($"default");
                     break;
