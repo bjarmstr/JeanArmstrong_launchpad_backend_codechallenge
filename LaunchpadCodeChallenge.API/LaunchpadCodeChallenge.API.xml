@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LaunchpadCodeChallenge.API</name>
+    </assembly>
+    <members>
+        <member name="T:LaunchpadCodeChallenge.API.Controllers.DynamoController">
+            <summary>
+            Controller to Access AWS External API 
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.DynamoController.SQSreadQueue">
+            <summary>
+            Get a list of Album Titles, query to filter by a search term is optional
+            </summary>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.Controllers.EmployeeController">
+            <summary>
+            endpoints for employee details 
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.ListAllAsync">
+            <summary>
+            Get details as a list for all employees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.ListAll">
+            <summary>
+            Test endpoint for IList
+            Doesn't have async and exposes Employee so not recommended for production
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.GetAll">
+            <summary>
+            Test endpoint to for IEnumerable GetAll Service
+            Doesn't have async and exposes Employee not recommended for production
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.GetByDepartment(System.Guid)">
+            <summary>
+            Get employees in a given department
+            </summary>
+            <param name="departmentId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

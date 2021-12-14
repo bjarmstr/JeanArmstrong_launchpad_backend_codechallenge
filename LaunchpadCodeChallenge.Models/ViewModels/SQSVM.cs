@@ -9,13 +9,13 @@ namespace LaunchpadCodeChallenge.Models.ViewModels
     public class SQSVM
     {
         
-        public string eventID { get; set; }
+        public string EventID { get; set; }
         /// <summary>
         /// primary key in DynamoDb
         /// </summary>
-        public int logevent_id { get; set; }
+        public int Logevent_id { get; set; }
 
-        public string logMessage { get; set; }
+        public string LogMessage { get; set; }
 
 
         

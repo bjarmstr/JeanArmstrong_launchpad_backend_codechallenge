@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LaunchpadCodeChallenge.Models</name>
+    </assembly>
+    <members>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Id">
+            <summary>
+            Guid Identifier - Uniquely Identifies the Department
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Name">
+            <summary>
+            Department Name
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Address">
+            <summary>
+            Each Department has a Unique Address
+            </summary>        
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Employees">
+            <summary>
+            Employees in the Department
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.Id">
+            <summary>
+            Unique identifier - Guid 
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.FirstName">
+            <summary>
+            First Name of Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.LastName">
+            <summary>
+            Last Name of Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.JobTitle">
+            <summary>
+            Job Title for Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.Address">
+            <summary>
+            Mailing Address
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.DepartmentId">
+            <summary>
+            Department that employee is assigned to
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.Department">
+            <summary>
+            Department is navigation property, which allows access to Department details
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.Id">
+            <summary>
+            Unique Identifier
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.FirstName">
+            <summary>
+            First Name of Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.LastName">
+            <summary>
+            Last Name of Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.JobTitle">
+            <summary>
+            Job Title for Employee
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.Address">
+            <summary>
+            Mailing Address
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.DepartmentId">
+            <summary>
+            Unique identifier for Department
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.DepartmentName">
+            <summary>
+            Name of Department that employee is assigned to
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.SQSVM.Logevent_id">
+            <summary>
+            primary key in DynamoDb
+            </summary>
+        </member>
+    </members>
+</doc>
