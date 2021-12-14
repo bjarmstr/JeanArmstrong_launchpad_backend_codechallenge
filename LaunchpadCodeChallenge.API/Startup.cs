@@ -1,3 +1,5 @@
+using LaunchpadCodeChallenge.API.SQSProcessor;
+using LaunchpadCodeChallenge.API.SQSProcessor.Interfaces;
 using LaunchpadCodeChallenge.Repository;
 using LaunchpadCodeChallenge.Repository.Interfaces;
 using LaunchpadCodeChallenge.Service;
@@ -36,6 +38,7 @@ namespace LaunchpadCodeChallenge.API
             // Configure Dependency Injection
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<ISQSHttpProcessor, SQSHttpProcessor>();
         }
 
 

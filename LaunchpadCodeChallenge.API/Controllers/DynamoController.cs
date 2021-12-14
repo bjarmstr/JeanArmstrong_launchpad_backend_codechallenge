@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using LaunchpadCodeChallenge.API.SQSProcessor.Interfaces;
+using LaunchpadCodeChallenge.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,26 @@ namespace LaunchpadCodeChallenge.API.Controllers
     [ApiController]
     public class DynamoController : ControllerBase
     {
+
+        private readonly ISQSHttpProcessor _sqsHttpProcessor;
+
+        public DynamoController(ISQSHttpProcessor sqsHttpProcessor)
+        {
+            _sqsHttpProcessor = sqsHttpProcessor;
+        }
+
+        /// <summary>
+        /// Get a list of Album Titles, query to filter by a search term is optional
+        /// </summary>
+        [HttpGet]
+
+        public async Task<ActionResult<List<SQSVM>>> SQSreadQueue()
+        {
+            var sqsResults = await _sqsHttpProcessor.SQSreadQueue();
+
+            return Ok(sqsResults);
+
+        }
 
     }
 }
