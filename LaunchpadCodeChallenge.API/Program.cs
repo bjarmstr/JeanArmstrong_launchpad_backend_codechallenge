@@ -12,8 +12,16 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.API
 {
+    /// <summary>
+    /// Main Program for CC API
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Main method for startup
+        /// Contains Database Migration details
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -43,6 +51,12 @@ namespace LaunchpadCodeChallenge.API
             host.Run();
         }
 
+
+        /// <summary>
+        /// Create Host Builder
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

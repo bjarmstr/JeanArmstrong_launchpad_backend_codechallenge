@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.Models.Entities
 {
+    /// <summary>
+    /// Class for Employee Dbset
+    /// </summary>
     public class Employee
     {
-
+        /// <summary>
+        /// Constructor for Employee Class
+        /// </summary>
         public Employee()
         {
 

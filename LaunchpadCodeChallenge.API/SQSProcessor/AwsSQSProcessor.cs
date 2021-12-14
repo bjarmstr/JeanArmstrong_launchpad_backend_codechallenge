@@ -8,9 +8,17 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.API.SQSProcessor
 {
+
+    /// <summary>
+    /// Use Awssdk.sqs to access SQS
+    /// </summary>
     public class AwsSQSProcessor
     {
-
+        /// <summary>
+        /// Read and Delete Records from SQS
+        /// SQS contains DynamoDb updates
+        /// </summary>
+        /// <returns></returns>
         public string readQueue()
         {
             //uses credentials in .aws folder on local computer
@@ -26,7 +34,9 @@ namespace LaunchpadCodeChallenge.API.SQSProcessor
 
             var receiveMessageResponse = sqs.ReceiveMessageAsync(receiveMessageRequest).Result;
 
+            // TODO - Finish with Delete capabilites
 
+            return ("not finished");
 
         }    
     }

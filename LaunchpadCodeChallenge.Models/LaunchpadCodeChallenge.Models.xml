@@ -4,6 +4,11 @@
         <name>LaunchpadCodeChallenge.Models</name>
     </assembly>
     <members>
+        <member name="T:LaunchpadCodeChallenge.Models.Entities.Department">
+            <summary>
+            Class for Department DbSet
+            </summary>
+        </member>
         <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Id">
             <summary>
             Guid Identifier - Uniquely Identifies the Department
@@ -22,6 +27,16 @@
         <member name="P:LaunchpadCodeChallenge.Models.Entities.Department.Employees">
             <summary>
             Employees in the Department
+            </summary>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.Models.Entities.Employee">
+            <summary>
+            Class for Employee Dbset
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.Models.Entities.Employee.#ctor">
+            <summary>
+            Constructor for Employee Class
             </summary>
         </member>
         <member name="P:LaunchpadCodeChallenge.Models.Entities.Employee.Id">
@@ -59,6 +74,21 @@
             Department is navigation property, which allows access to Department details
             </summary>
         </member>
+        <member name="T:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM">
+            <summary>
+            View Model for Employee Entity
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.#ctor">
+            <summary>
+            EmployeeVM default constructor
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.#ctor(LaunchpadCodeChallenge.Models.Entities.Employee)">
+             <summary>
+            Build EmployeeVM from Employee Entity
+             </summary>
+        </member>
         <member name="P:LaunchpadCodeChallenge.Models.ViewModels.EmployeeVM.Id">
             <summary>
             Unique Identifier
@@ -94,9 +124,24 @@
             Name of Department that employee is assigned to
             </summary>
         </member>
+        <member name="T:LaunchpadCodeChallenge.Models.ViewModels.SQSVM">
+            <summary>
+            Basic Reponse Fields from 
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.SQSVM.EventID">
+            <summary>
+            SQS EventID
+            </summary>
+        </member>
         <member name="P:LaunchpadCodeChallenge.Models.ViewModels.SQSVM.Logevent_id">
             <summary>
             primary key in DynamoDb
+            </summary>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.Models.ViewModels.SQSVM.LogMessage">
+            <summary>
+            LogMessage Field from DynamoDB
             </summary>
         </member>
     </members>

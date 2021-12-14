@@ -7,14 +7,23 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.Models.ViewModels
 {
+    /// <summary>
+    /// View Model for Employee Entity
+    /// </summary>
     public class EmployeeVM
     {
 
+        /// <summary>
+        /// EmployeeVM default constructor
+        /// </summary>
         public EmployeeVM()
         {
 
         }
 
+        /// <summary>
+        ///Build EmployeeVM from Employee Entity
+        /// </summary>
         public EmployeeVM(Employee src)
         {
             Id = src.Id;

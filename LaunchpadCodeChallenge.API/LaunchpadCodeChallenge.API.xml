@@ -9,15 +9,28 @@
             Controller to Access AWS External API 
             </summary>
         </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.DynamoController.#ctor(LaunchpadCodeChallenge.API.SQSProcessor.Interfaces.ISQSHttpProcessor)">
+            <summary>
+            Access SQS
+            </summary>
+            <param name="sqsHttpProcessor"></param>
+        </member>
         <member name="M:LaunchpadCodeChallenge.API.Controllers.DynamoController.SQSreadQueue">
             <summary>
-            Get a list of Album Titles, query to filter by a search term is optional
+            Get SQS Records
+            DynamoDb Streams updates to SQS through a Lambda function
             </summary>
         </member>
         <member name="T:LaunchpadCodeChallenge.API.Controllers.EmployeeController">
             <summary>
             endpoints for employee details 
             </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.#ctor(LaunchpadCodeChallenge.Service.Interfaces.IEmployeeService)">
+            <summary>
+            Controller for Employee details
+            </summary>
+            <param name="employeeService"></param>
         </member>
         <member name="M:LaunchpadCodeChallenge.API.Controllers.EmployeeController.ListAllAsync">
             <summary>
@@ -45,6 +58,94 @@
             </summary>
             <param name="departmentId"></param>
             <returns></returns>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.Program">
+            <summary>
+            Main Program for CC API
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Program.Main(System.String[])">
+            <summary>
+            Main method for startup
+            Contains Database Migration details
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create Host Builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.SQSProcessor.AwsSQSProcessor">
+            <summary>
+            Use Awssdk.sqs to access SQS
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.SQSProcessor.AwsSQSProcessor.readQueue">
+            <summary>
+            Read and Delete Records from SQS
+            SQS contains DynamoDb updates
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.SQSProcessor.Interfaces.ISQSHttpProcessor">
+            <summary>
+            Interface for Reading SQS using Http
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.SQSProcessor.Interfaces.ISQSHttpProcessor.SQSreadQueue">
+            <summary>
+            Read SQS data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.SQSProcessor.SQSHttpProcessor">
+            <summary>
+            Consume SQS API using HTTP request
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.SQSProcessor.SQSHttpProcessor.SQSreadQueue">
+            <summary>
+            Read Records from Queue
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LaunchpadCodeChallenge.API.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:LaunchpadCodeChallenge.API.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Startup.ConfigureDependencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Dependency Injection
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add Services to the app
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:LaunchpadCodeChallenge.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure Http request pipeline
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>

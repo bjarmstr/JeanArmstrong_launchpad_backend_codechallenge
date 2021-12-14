@@ -9,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LaunchpadCodeChallenge.Models.Entities
 {
-
+    /// <summary>
+    /// Class for Department DbSet
+    /// </summary>
     [Index(nameof(Address), IsUnique = true)]
     public class Department
     {

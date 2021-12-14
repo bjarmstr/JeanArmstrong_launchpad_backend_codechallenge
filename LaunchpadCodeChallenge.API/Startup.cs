@@ -24,16 +24,31 @@ using System.Threading.Tasks;
 
 namespace LaunchpadCodeChallenge.API
 {
+
+    /// <summary>
+    /// Startup class
+    /// </summary>
     public class Startup
     {
+
+        /// <summary>
+        /// Startup
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-
+        /// <summary>
+        /// Dependency Injection
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureDependencyInjection(IServiceCollection services)
         {
             // Configure Dependency Injection
@@ -42,8 +57,10 @@ namespace LaunchpadCodeChallenge.API
             services.AddScoped<ISQSHttpProcessor, SQSHttpProcessor>();
         }
 
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Add Services to the app
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -70,8 +87,12 @@ namespace LaunchpadCodeChallenge.API
 
 
         }
+        /// <summary>
+        /// Configure Http request pipeline
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 

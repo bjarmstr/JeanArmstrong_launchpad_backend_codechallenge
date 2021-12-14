@@ -10,8 +10,16 @@ using LaunchpadCodeChallenge.API.SQSProcessor.Interfaces;
 
 namespace LaunchpadCodeChallenge.API.SQSProcessor
 {
+    /// <summary>
+    /// Consume SQS API using HTTP request
+    /// </summary>
     public class SQSHttpProcessor: ISQSHttpProcessor
     {
+
+        /// <summary>
+        /// Read Records from Queue
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<SQSVM>> SQSreadQueue()
         {
             using (var client = new HttpClient())

@@ -19,13 +19,18 @@ namespace LaunchpadCodeChallenge.API.Controllers
 
         private readonly ISQSHttpProcessor _sqsHttpProcessor;
 
+        /// <summary>
+        /// Access SQS
+        /// </summary>
+        /// <param name="sqsHttpProcessor"></param>
         public DynamoController(ISQSHttpProcessor sqsHttpProcessor)
         {
             _sqsHttpProcessor = sqsHttpProcessor;
         }
 
         /// <summary>
-        /// Get a list of Album Titles, query to filter by a search term is optional
+        /// Get SQS Records
+        /// DynamoDb Streams updates to SQS through a Lambda function
         /// </summary>
         [HttpGet]
 
