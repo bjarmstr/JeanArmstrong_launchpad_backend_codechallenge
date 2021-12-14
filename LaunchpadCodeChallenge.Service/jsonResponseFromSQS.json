@@ -1,0 +1,31 @@
+{
+    "Records": [
+        {
+            "eventID": "3caae0b0ec08e0de02b5702c09a71c94",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "ca-central-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1639446836,
+                "Keys": {
+                    "logevent_id": {
+                        "N": "88"
+                    }
+                },
+                "NewImage": {
+                    "logMessage": {
+                        "S": "Need to get message or id 88"
+                    },
+                    "logevent_id": {
+                        "N": "88"
+                    }
+                },
+                "SequenceNumber": "1658200000000019473140780",
+                "SizeBytes": 64,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:ca-central-1:625915104196:table/LPLogEvents/stream/2021-12-13T14:37:34.840"
+        }
+    ]
+}
